@@ -1,26 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en">
-# <head>
-#     <meta charset="UTF-8">
-#     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-#     <title>Chat App</title>
-# </head>
-# <body>
-#     <h1>Secure Chat App</h1>
-#     <div>
-#         <h3>Send Message</h3>
-#         <input id="username" placeholder="Enter your username"><br>
-#         <textarea id="message" placeholder="Enter your message"></textarea><br>
-#         <button onclick="sendMessage()">Send</button>
-#     </div>
-#     <div>
-#         <h3>Receive Message</h3>
-#         <input id="receive_username" placeholder="Enter username to receive message"><br>
-#         <button onclick="receiveMessage()">Receive</button>
-#     </div>
-#     <div id="response"></div>
-#     <script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Secure Chat App</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f9fa;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            /* Другие стили можно добавлять сюда */
+            h1 {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+        </style>
+    </head>
+    
+ <body>
+     <h1>Secure Chat App</h1>
+     <div>
+         <h3>Send Message</h3>
+         <input id="username" placeholder="Enter your username"><br>
+         <textarea id="message" placeholder="Enter your message"></textarea><br>
+         <button onclick="sendMessage()">Send</button>
+     </div>
+     <div>
+         <h3>Receive Message</h3>
+         <input id="receive_username" placeholder="Enter username to receive message"><br>
+         <button onclick="receiveMessage()">Receive</button>
+     </div>
+     <div id="response"></div>
+     <script>
          function sendMessage() {
              const message = document.getElementById('message').value;
              const username = document.getElementById('username').value;
@@ -54,5 +92,5 @@
              .catch(error => console.error('Error:', error));
          }
      </script>
-# </body>
-# </html>
+ </body>
+ </html>
