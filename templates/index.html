@@ -1,0 +1,58 @@
+# Создаем HTML файл "templates/index.html" для интерфейса:
+<!DOCTYPE html>
+<html lang="en">
+# <head>
+#     <meta charset="UTF-8">
+#     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#     <title>Chat App</title>
+# </head>
+# <body>
+#     <h1>Secure Chat App</h1>
+#     <div>
+#         <h3>Send Message</h3>
+#         <input id="username" placeholder="Enter your username"><br>
+#         <textarea id="message" placeholder="Enter your message"></textarea><br>
+#         <button onclick="sendMessage()">Send</button>
+#     </div>
+#     <div>
+#         <h3>Receive Message</h3>
+#         <input id="receive_username" placeholder="Enter username to receive message"><br>
+#         <button onclick="receiveMessage()">Receive</button>
+#     </div>
+#     <div id="response"></div>
+#     <script>
+         function sendMessage() {
+             const message = document.getElementById('message').value;
+             const username = document.getElementById('username').value;
+             fetch('/send', {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify({ message: message, username: username })
+             })
+             .then(response => response.json())
+             .then(data => {
+                 document.getElementById('response').innerText = 'Encrypted Message: ' + data.encrypted_message;
+             })
+             .catch(error => console.error('Error:', error));
+         }
+
+         function receiveMessage() {
+             const username = document.getElementById('receive_username').value;
+             fetch('/receive', {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify({ username: username })
+             })
+             .then(response => response.json())
+             .then(data => {
+                 document.getElementById('response').innerText = 'Decrypted Message: ' + data.decrypted_message;
+             })
+             .catch(error => console.error('Error:', error));
+         }
+     </script>
+# </body>
+# </html>
