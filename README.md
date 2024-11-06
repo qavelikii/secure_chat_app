@@ -81,5 +81,6 @@ The application includes a simple yet visually appealing HTML-based interface th
 
 ## License
 
-This project is open source and available under the MIT License.
+Velikii Dmitrii
+
 
