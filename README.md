@@ -77,7 +77,7 @@ The application includes a simple yet visually appealing HTML-based interface th
 ## Limitations
 
 - **In-Memory Storage**: Messages are stored in memory (`data_store`), which means they will be lost if the server is restarted.
-- **Basic Security**: The application is for educational purposes and is not intended for production use. More robust security measures are needed for a production environment.
+- **Basic Security**: The application is for educational purposes and is not intended for production use. More robust security measures are needed for a production environment..
 
 ## License
 
